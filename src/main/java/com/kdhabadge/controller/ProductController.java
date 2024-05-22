@@ -32,7 +32,19 @@ public class ProductController {
 	{
 		String resp = service.saveProduct(product);
 		if(resp == "1"){
-		String emailResponse = emailService.sendSimpleMail(product.getEmail(),  "Dear ," + product.getName() +" Query Recieved " ," Your Query has been recorded and will be handled soon by our executives. Thank you for contacting us.");
+		String emailResponse = emailService.sendSimpleMail(product.getEmail(),  "Dear ," + product.getName() +" Query Recieved " ," Thank you for reaching out to us at Masterpieces Mart. We have received your message and appreciate you taking the time to get in touch.\r\n" + //
+						"\r\n" + //
+						"Our team is currently reviewing your inquiry and will respond as soon as possible. We aim to address all questions and concerns promptly, usually within 24-48 hours.\r\n" + //
+						"\r\n" + //
+						"In the meantime, feel free to explore our collection of original art pieces or check out our FAQ page for answers to common questions.\r\n" + //
+						"\r\n" + //
+						"If you have any urgent matters, you can also contact us directly at [support email] or [phone number].\r\n" + //
+						"\r\n" + //
+						"Thank you for your patience and for being a valued member of the Masterpieces Mart community.\r\n" + //
+						"\r\n" + //
+						"Best regards,\r\n" + //
+						"\r\n" + //
+						"The Masterpieces Mart Support Team");
         System.out.println(emailResponse);
 			return "Product Added Successfully!!!";
 		}
